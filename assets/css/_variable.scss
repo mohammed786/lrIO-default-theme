@@ -1,0 +1,45 @@
+// This file contains variables for the colour palette used throughout the site, used for backgrounds, fonts, links, buttons, etc.
+$font-stack: "Barlow", Helvetica, Arial, sans-serif;
+
+// gutters
+$gutter: 24px;
+
+// brand tones
+$blue-bright: #008ecf;
+$blue-dark: #073857;
+$blue-darkest: #09263c;
+$blue-light: #e3f1f8;
+
+// Neutral Tones
+$white: #ffffff;
+$black: #020b13;
+$gray-dark: #757a7e;
+$gray-darkest: #41484e;
+$gray-medium: #b3b6b8;
+$gray-light: #d1d3d4;
+$gray-lightest: #ecedee;
+$gray-lightest-light: #e8e9ea;
+
+$success: #39b55a;
+$warning: #f1a321;
+$error: #e61728;
+
+// sidebar bg
+
+$sidebar-gray: #f7f7f7;
+
+// spacing modifier variables
+$space-none: 0 !important;
+$space-x-sm: 16px !important;
+$space-sm: 24px !important;
+$space-md: 48px !important;
+$space-lg: 96px !important;
+$space-x-lg: 128px !important;
+$space-auto: auto !important;
+
+//transition Duration
+$transitionDuration: 350ms;
+
+//opacity variable
+$transparent: transparent;
+$opacity-disabled: 0.38;

@@ -1,0 +1,410 @@
+@use "sass:math";
+@import "base", "variable";
+
+.form {
+    background-color: #fff;
+    padding: 48px 32px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    max-width: 456px;
+    margin: 56px auto;
+    width: 100%;
+    .logo,
+    .header {
+        text-align: center;
+    }
+
+    .buttons-social-media {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        a {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            min-height: 52px;
+            border: 1px solid $gray-medium;
+            border-radius: 4px;
+            background-color: $white;
+            width: 100%;
+            padding: 0 16px;
+            font-weight: 500;
+            color: $gray-darkest;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+            &:hover {
+                text-decoration: none;
+                background-color: lighten($gray-lightest, 4%);
+            }
+        }
+    }
+    .input-fields {
+        #form-view {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .input-field {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                input:not([type="checkbox"]),
+                input:not([type="radio"]),
+                input:not([type="color"]),
+                textarea,
+                select {
+                    min-height: 48px;
+                    border: 1px solid $gray-medium;
+                    border-radius: 4px;
+                    background-color: white;
+                    width: 100%;
+                    padding: 0 16px;
+                    font-size: 16px;
+                    color: $gray-darkest;
+                    transition: all 0.2s ease-in-out;
+                    &:focus {
+                        color: $gray-darkest;
+                        background-color: $white;
+                        border-color: $blue-bright;
+                        outline: 0;
+                        box-shadow: 0 0 0 0.25rem rgba(0, 142, 207, 0.25);
+                    }
+                    &:hover {
+                        border-color: $blue-bright;
+                    }
+                    &:disabled {
+                        background: #f7f7f7;
+                        cursor: not-allowed;
+                    }
+                }
+                select {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    text-indent: 1px;
+                    text-overflow: "";
+                    background-repeat: no-repeat;
+                    background-size: 10px 16px;
+                    background-position: calc(100% - 15px) 0.95rem;
+                    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5.99 3.19'%3E%3Cpath fill='%23030707' d='M3 3.19L5.99 0H0l3 3.19z'/%3E%3C/svg%3E");
+                }
+                textarea {
+                    padding: 16px;
+                }
+                .field-group {
+                    display: flex;
+                    & > select {
+                        border-radius: 4px 0 0 4px;
+                        max-width: 96px;
+                    }
+                    & > input {
+                        border-radius: 0 4px 4px 0;
+                        border-left: 0;
+                    }
+                }
+                input[type="checkbox"],
+                input[type="radio"] {
+                    border-radius: 3px;
+                    width: 18px;
+                    height: 48px;
+                    min-height: 18px;
+                    border: 1px solid $gray-medium;
+                    margin: 0 12px 0 0;
+                    caret-color: $blue-bright;
+                    &:focus {
+                        box-shadow: none;
+                    }
+                    & + label {
+                        line-height: 20px;
+                    }
+                }
+            }
+
+            .remember-me-signup {
+                & > div {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .btn-primary {
+                background-color: $blue-bright;
+                color: $white;
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+                min-height: 52px;
+                border: 1px solid $blue-bright;
+                border-radius: 4px;
+                width: 100%;
+                padding: 0 16px;
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    background-color: darken($blue-bright, 4%);
+                    border-color: darken($blue-bright, 4%);
+                }
+            }
+        }
+    }
+    .separator {
+        position: relative;
+        z-index: 0;
+        & > div {
+            text-transform: uppercase;
+            background: $white;
+            width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            margin: 8px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            position: relative;
+        }
+        &:before {
+            width: 100%;
+            height: 1px;
+            content: "";
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            border-top: 1px solid $gray-light;
+        }
+    }
+
+    .header {
+        margin: 24px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        p {
+            font-weight: 500;
+        }
+    }
+    .signin,
+    .signup {
+        margin-top: 24px;
+        &.link {
+            p {
+                text-align: center;
+                color: $gray-dark;
+                a {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .text-error {
+        color: $error;
+    }
+    .text-success {
+        color: $success;
+    }
+    .text-error,
+    .text-success {
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    a {
+        font-weight: 500;
+    }
+}
+.label-group {
+    a {
+        font-weight: 500;
+    }
+}
+
+.btn-secondary {
+    color: $blue-bright;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    font-family: $font-stack;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+.btn-outline {
+    background-color: $white;
+    color: $blue-bright;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 52px;
+    border: 1px solid $blue-bright;
+    border-radius: 4px;
+    width: 100%;
+    padding: 0 16px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: darken($blue-bright, 4%);
+        border-color: darken($blue-bright, 4%);
+        color: $white;
+    }
+}
+.btn-error {
+    background-color: $white;
+    color: $error;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 52px;
+    border: 1px solid $error;
+    border-radius: 4px;
+    width: 100%;
+    padding: 0 16px;
+    transition: all 0.2s ease-in-out;
+    &:hover,
+    &:focus {
+        background-color: darken($error, 4%);
+        border-color: darken($error, 4%);
+        color: $white;
+        text-decoration: none;
+    }
+}
+.login-options .option-row {
+    cursor: pointer;
+    display: flex;
+    &:not(:last-child) {
+        // padding-bottom: 24px;
+        // margin-bottom: 24px;
+        border-bottom: 1px solid #e8e9ea;
+    }
+    .icon {
+        margin-right: 16px;
+        svg {
+            vertical-align: middle;
+        }
+    }
+    .description {
+        h4 {
+            font-size: 16px;
+            margin: 0 0 4px 0;
+            line-height: normal;
+            text-transform: capitalize;
+            transition: all 200ms ease-in-out;
+        }
+        p {
+            margin: 0;
+            line-height: normal;
+            color: #757a7e;
+            font-size: 15px;
+        }
+    }
+    &:hover .description {
+        h4 {
+            color: #008ecf;
+        }
+    }
+    .btn-secondary {
+        width: 100%;
+        padding: 24px 0;
+        color: $gray-darkest;
+        &:hover,
+        &:focus  {
+            color: #008ecf;
+            text-decoration: none;
+        }
+    }
+}
+
+.content-loginradius-qrcode {
+    display: flex;
+    .image {
+        background-size: cover;
+        object-fit: cover;
+        width: 194px;
+        height: 178px;
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+        margin: -15px 0 0 -15px;
+    }
+    .description {
+        width: calc(100% - 184px);
+        margin-left: 4px;
+        line-height: 1.5;
+    }
+}
+.content-loginradius-ManualEntryCode {
+    margin-bottom: 0;
+    textarea {
+        resize: none;
+        min-height: 52px;
+        line-height: normal;
+        vertical-align: bottom;
+    }
+    p {
+        font-size: 15px;
+        line-height: 18px;
+        color: #757a7e;
+    }
+}
+
+.content-loginradius-phoneNo2FA {
+    & *:nth-child(1),
+    & *:nth-child(4) {
+        width: 100%;
+        display: block;
+    }
+    div {
+        width: 90px;
+        float: left;
+        line-height: inherit;
+        background-position: 86% 17px;
+        border-radius: 3px 0 0 3px;
+    }
+    input#loginradius-updatePhone-phoneNo2FA,
+    input#loginradius-changePhone-phoneNo2FA {
+        width: calc(100% - 90px);
+        display: flex;
+        border-radius: 0 3px 3px 0;
+    }
+}
+
+div#States select {
+    background-position: 86% 17px;
+    line-height: normal;
+}
+.backup-code {
+    background: #f7f7f7;
+    padding: 24px;
+    border-radius: 8px;
+    ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        list-style: none;
+        li {
+            width: calc(50% - 12px);
+            font-weight: 500;
+            &:nth-child(odd) {
+                text-align: right;
+            }
+            &:nth-child(even) {
+                text-align: left;
+            }
+        }
+    }
+}

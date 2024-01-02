@@ -1,0 +1,64 @@
+@import "variable";
+*,
+:before,
+:after {
+    box-sizing: border-box;
+    caret-color: $blue-bright;
+}
+html * {
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $gray-lightest-light;
+    color: $blue-darkest;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+// links
+a {
+    cursor: pointer;
+    color: $blue-bright;
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color: $blue-bright;
+}
+
+a:active,
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 0;
+}
+.flex {
+    display: flex;
+}
+.item-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.gap-md {
+    gap: 24px;
+}
