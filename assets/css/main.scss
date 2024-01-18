@@ -99,7 +99,7 @@
                     display: flex;
                     & > select {
                         border-radius: 4px 0 0 4px;
-                        max-width: 96px;
+                        max-width: 124px;
                     }
                     & > input {
                         border-radius: 0 4px 4px 0;
@@ -322,7 +322,7 @@
         padding: 24px 0;
         color: $gray-darkest;
         &:hover,
-        &:focus  {
+        &:focus {
             color: #008ecf;
             text-decoration: none;
         }
