@@ -9,6 +9,10 @@
     max-width: 456px;
     margin: 56px auto;
     width: 100%;
+    @media (max-width: 767px) {
+        width: calc(100% - 32px);
+        padding: 34px 32px;
+    }
     .logo,
     .header {
         text-align: center;
@@ -410,4 +414,17 @@ div#States select {
 }
 .auto-height {
     height: auto !important;
+}
+.footer {
+    text-align: center;
+    color: #09263c;
+    padding: 0 0 24px 0;
+    font-size: 14px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    @media (max-width: 767px) {
+        position: relative;
+    }
 }
