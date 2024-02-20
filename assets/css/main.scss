@@ -152,6 +152,23 @@
                     border-color: darken($blue-bright, 4%);
                 }
             }
+            &.consent-form {
+                gap: 32px;
+                input[type="checkbox"] {
+                    height: 18px;
+                }
+                .consent-list {
+                    margin-top: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    align-items: flex-start;
+                    & > div {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
         }
     }
     .separator {
@@ -192,6 +209,7 @@
         }
         p {
             font-weight: 500;
+            color: $gray-dark;
         }
     }
     .signin,
