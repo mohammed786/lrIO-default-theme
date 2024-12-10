@@ -170,6 +170,12 @@
         }
       }
     }
+    .btn-scnd-grp {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
   .separator {
     position: relative;
@@ -475,14 +481,14 @@ div#States select {
 }
 
 .btn-home:hover {
-    background-color: #0080bb;
-    border-color: #0080bb;
+  background-color: #0080bb;
+  border-color: #0080bb;
 }
 
 .description {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .footer {
   text-align: center;
