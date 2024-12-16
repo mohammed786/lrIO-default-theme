@@ -47,6 +47,7 @@
     }
   }
   .input-fields {
+    width: 100%;
     #form-view {
       display: flex;
       flex-direction: column;
@@ -256,6 +257,24 @@
 .label-group {
   a {
     font-weight: 500;
+  }
+}
+
+.btn-primary {
+  background-color: $blue-bright;
+  color: $white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 52px;
+  border: 1px solid $blue-bright;
+  border-radius: 4px;
+  width: 100%;
+  padding: 0 16px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: darken($blue-bright, 4%);
+    border-color: darken($blue-bright, 4%);
   }
 }
 
